@@ -45,14 +45,14 @@ gulp.task("image:dist", function () {
               min: 80,
             }),
             pngquant(),
-            imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
+            // imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
           ])
         )
       )
       .pipe(webp())
       .pipe(gulp.dest(path.dist.img))
       .on("end", () => {
-        reload();
+        // reload();
       })
   );
 });
