@@ -75,7 +75,8 @@ var path = {
   clean: {
     dev: "dev/*",
     dist: "dist/*",
-    marbaise: "marbaise-webp/*",
+    origin: "marbaise-origin/*",
+    webp: "marbaise-webp/*",
   },
 };
 
@@ -392,6 +393,12 @@ gulp.task("marbaise:dist", function () {
 // Remove catalog dev
 gulp.task("clean:dist", function () {
   return del(path.clean.dist);
+});
+gulp.task("clean:origin", function () {
+  return del(path.clean.origin);
+});
+gulp.task("clean:webp", function () {
+  return del(path.clean.webp);
 });
 
 // Clear cache

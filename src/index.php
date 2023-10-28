@@ -66,7 +66,6 @@
 		<!-- /section -->
 	</div>
 	<!-- /.content-wrapper -->
-	@@include('_page-progress.html')
 	@@include('_scripts.html')
 </body>
 </html>

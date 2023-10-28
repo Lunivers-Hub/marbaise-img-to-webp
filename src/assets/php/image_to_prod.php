@@ -60,6 +60,7 @@ function get_images_from_excel(){
 }
 
 function get_images_from_wpallimport(){
+    $wpallimport_images = [];
     $files_dir = dirname($_SERVER["DOCUMENT_ROOT"])."/marbaise-webp/";
     $existing_files = glob($files_dir . '*.webp');
     foreach($existing_files as $file) {
@@ -70,8 +71,15 @@ function get_images_from_wpallimport(){
     return $wpallimport_images;
 }
 
-function get_noexisting_files_from_import($images_from_wpallimport = [], $images_from_excel= []){
-    return array_diff($images_from_wpallimport, $images_from_excel);
+function get_noexisting_files_from_import($images_from_wpallimport = [], $images_from_excel = []){
+
+    $array_diff = [];
+
+    if(!empty($images_from_wpallimport) && !empty($images_from_excel)){
+        $array_diff = array_diff($images_from_wpallimport, $images_from_excel);
+    }
+    
+    return $array_diff;
     // return $images_from_wpallimport;
 }
 
