@@ -1,4 +1,6 @@
 marbaise-webp/*
+marbaise-origin/*
+dist/*
 
 # NPM packages folder.
 node_modules/
